@@ -14,8 +14,9 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/MovieDetail/movieDetail',
-      'pages/index/index'
+      'pages/index/index',
+      'pages/MovieDetail/movieDetail'
+      
     ],
     window: {
       backgroundTextStyle: 'light',
