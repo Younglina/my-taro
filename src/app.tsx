@@ -15,7 +15,7 @@ class App extends Component {
   config: Config = {
     pages: [
       'pages/index/index',
-      'pages/MovieDetail/movieDetail'
+      'pages/MovieDetail/movieDetail',
       
     ],
     window: {

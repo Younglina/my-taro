@@ -5,24 +5,27 @@ export class HotMovie extends Component {
   constructor() {
     super(...arguments)
     this.state = {
-      hotMovie: []
+      hotMovie: [],
+      loading: true
     }
   }
 
 
-  componentWillMount() {
+  componentDidMount() {
     let self = this
     Taro.request({
       url: 'https://www.easy-mock.com/mock/5bf27ef5700af43dcbc9c7bb/dban/movie/in_theaters',
     }).then(res => {
-      self.setState({ hotMovie: res.data.subjects })
+      self.setState({ hotMovie: res.data.subjects, loading: false })
     })
   }
 
   render() {
-    return (
-      <Commen movies={this.state.hotMovie} />
-    )
+    if (!this.state.loading) {
+      return (
+        <Commen movies={this.state.hotMovie} />
+      )
+    } 
   }
 }
 

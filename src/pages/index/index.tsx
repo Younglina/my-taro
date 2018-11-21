@@ -20,23 +20,32 @@ export default class Index extends Component {
   constructor() {
     super(...arguments)
     this.state = {
-      hotMovie: []
+      hotMovie: [],
     }
   }
 
-
-  componentWillMount() {
+  componentDidMount() {
+    // Taro.getUserInfo().then(res=>{
+    //   console.log(res)
+    // })
   }
 
   render() {
     return (
       <View>
         <View id="index">
-
+        <View class="userInfo">
+          <View class="userTitle">
+            <open-data type="userAvatarUrl" lang="zh_CN"></open-data>
+          </View>
+          <View>
+            <open-data type="userNickName" lang="zh_CN"></open-data>
+          </View>
+        </View>
           <View class="mainView">
             <View class="titleView">
               <Text>影院热映</Text>
-              <Navigator url="/pages/MovieDetail/movieDetail">更多</Navigator>
+              <Navigator url="">更多</Navigator>
             </View>
             <HotMovie></HotMovie>
           </View>
@@ -57,7 +66,7 @@ export default class Index extends Component {
             <New></New>
           </View>
 
-         </View>
+        </View>
       </View >
     )
   }

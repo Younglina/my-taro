@@ -1,8 +1,22 @@
+.userInfo {
+    display: flex;
+    align-items: center;
+    font-size:28rpx;
+    .userTitle {
+        height: 90rpx;
+        width: 90rpx;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+}
+
 .titleView {
     display: flex;
     justify-content: space-between;
     font-size: 24px;
 }
-.mainView{
+
+.mainView {
     overflow-x: hidden;
+    margin: 20rpx 0;
 }
