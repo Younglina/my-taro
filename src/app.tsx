@@ -2,7 +2,7 @@ import Taro, { Component, Config } from '@tarojs/taro'
 import Index from './pages/index'
 
 import './app.scss'
-
+import './icon.scss'
 class App extends Component {
 
   /**
@@ -16,7 +16,7 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/MovieDetail/movieDetail',
-      
+      'pages/MovieType/MovieType',
     ],
     window: {
       backgroundTextStyle: 'light',

@@ -16,14 +16,14 @@ export class New extends Component {
     Taro.request({
       url: 'https://www.easy-mock.com/mock/5bf27ef5700af43dcbc9c7bb/dban/new',
     }).then(res => {
-      self.setState({ movies: res.data.subjects,true:false })
+      self.setState({ movies: res.data.subjects,loading:false })
     })
   }
 
   render() {
     if (!this.state.loading) {
     return (
-      <Commen movies={this.state.movies} />
+      <Commen movies={this.state.movies.slice(0,8)} />
     )
   }
 }

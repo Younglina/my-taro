@@ -13,8 +13,8 @@ export class HotMovie extends Component {
 
   componentDidMount() {
     let self = this
-    Taro.request({
-      url: 'https://www.easy-mock.com/mock/5bf27ef5700af43dcbc9c7bb/dban/movie/in_theaters',
+    Taro.request({header: { 'content-type': 'application/xml' },
+    url:'https://douban.uieee.com/v2/movie/in_theaters',
     }).then(res => {
       self.setState({ hotMovie: res.data.subjects, loading: false })
     })
@@ -23,7 +23,7 @@ export class HotMovie extends Component {
   render() {
     if (!this.state.loading) {
       return (
-        <Commen movies={this.state.hotMovie} />
+        <Commen movies={this.state.hotMovie.slice(0,8)} />
       )
     } 
   }

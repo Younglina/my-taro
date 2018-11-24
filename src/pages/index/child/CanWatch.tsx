@@ -24,7 +24,7 @@ export class CanWatch extends Component {
     render() {
         if (!this.state.loading) {
         return (
-            <Commen movies={this.state.movies} />
+            <Commen movies={this.state.movies.slice(0,8)} />
         )
     }
 }
