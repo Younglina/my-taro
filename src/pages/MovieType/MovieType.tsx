@@ -19,6 +19,9 @@ export default class MovieType extends Component {
     }
 
     onReachBottom() {
+        Taro.showLoading({
+            title: '加载中',
+          })
         this.fetchDate();
     }
 
@@ -35,6 +38,7 @@ export default class MovieType extends Component {
             }).then(res => {
                 self.setState({ movies: temp.concat(res.data.subjects)});
                 Taro.hideNavigationBarLoading()
+                Taro.hideLoading()
                 self.setState({start:self.state.start + 12})
             })
     }

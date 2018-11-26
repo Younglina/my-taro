@@ -27,7 +27,7 @@ export default class Index extends Component {
 
     render() {
         let data = this.state.info;//this.state.temp;
-        if(!this.state.loding){
+        if(!this.state.loading){
         return (
             <View id="detail">
                 <Text class="title">{data.title}</Text>

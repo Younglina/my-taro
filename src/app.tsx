@@ -14,6 +14,7 @@ class App extends Component {
    */
   config: Config = {
     pages: [
+      'pages/music/music',
       'pages/index/index',
       'pages/MovieDetail/movieDetail',
       'pages/MovieType/MovieType',
@@ -23,6 +24,12 @@ class App extends Component {
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      list : [
+        {text:'音乐', pagePath:'pages/music/music'},
+        {text:'电影', pagePath:'pages/index/index'},
+      ]
     }
   }
 
