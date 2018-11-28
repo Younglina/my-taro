@@ -27,8 +27,8 @@ class App extends Component {
     },
     tabBar: {
       list : [
-        {text:'音乐', pagePath:'pages/music/music'},
-        {text:'电影', pagePath:'pages/index/index'},
+        {text:'音乐', pagePath:'pages/music/music',iconPath:'./img/music.png',selectedIconPath:'./img/music.png'},
+        {text:'电影', pagePath:'pages/index/index',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
       ]
     }
   }

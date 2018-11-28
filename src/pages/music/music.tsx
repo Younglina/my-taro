@@ -1,6 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
-
+import './music.scss'
 export default class Index extends Component {
 
     config: Config = {
@@ -18,9 +18,9 @@ export default class Index extends Component {
 
     componentDidMount() {
         let self = this 
-        // Taro.request({ url: this.state.baseUrl + '/mv/first' }).then(res => {
-        //     self.setState({ firstMv: res.data.data.slice(0, 8) })
-        // })
+        Taro.request({ url: this.state.baseUrl + '/mv/first' }).then(res => {
+            self.setState({ firstMv: res.data.data.slice(0, 8) })
+        })
 
         Taro.request({ url: this.state.baseUrl + '/personalized' }).then(res => {
             self.setState({ recomMusicList: res.data.result.slice(0, 6) })
@@ -39,7 +39,7 @@ export default class Index extends Component {
         return (
             <View id="music">
                 <View>
-                    {/* <Swiper
+                    <Swiper
                         className='swiper'
                         indicatorColor='#999'
                         indicatorActiveColor='#333'
@@ -55,7 +55,7 @@ export default class Index extends Component {
                                 </SwiperItem>
                             )
                         })}
-                    </Swiper> */}
+                    </Swiper>
                 </View>
 
                 <View class="iconGroup">

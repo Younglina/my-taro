@@ -32,7 +32,8 @@ export default class Index extends Component {
   }
 
   whichType(e){
-    Taro.navigateTo({url:'/pages/MovieType/MovieType?tag='+e._relatedInfo.anchorRelatedText+'&type=tags'})
+    console.log(e)
+    Taro.navigateTo({url:'/pages/MovieType/MovieType?tag='+e.target.dataset.type+'&type=tags'})
   }
   render() {
     return (
@@ -77,8 +78,8 @@ export default class Index extends Component {
             <View onClick={this.whichType}>
               {this.state.types.map(item=>{
                 return (
-                  <View data-type={item} class="typeItem" key={item}>
-                    <Text>{item}</Text>
+                  <View  data-type={item} class="typeItem" key={item}>
+                    <Text  data-type={item}>{item}</Text>
                     {<Text class="iconfont icon-you-right-a"></Text>}
                   </View>
                 )
