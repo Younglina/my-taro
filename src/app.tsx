@@ -14,11 +14,11 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/GitHub/Trending/trending',
-      'pages/music/music',
       'pages/index/index',
+      'pages/music/music',
       'pages/MovieDetail/movieDetail',
       'pages/MovieType/MovieType',
+      'pages/GitHub/Trending/trending',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -28,8 +28,8 @@ class App extends Component {
     },
     tabBar: {
       list : [
-        {text:'音乐', pagePath:'pages/music/music',iconPath:'./img/music.png',selectedIconPath:'./img/music.png'},
-        {text:'电影', pagePath:'pages/index/index',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
+        {text:'GitHub', pagePath:'pages/GitHub/Trending/trending',iconPath:'./img/music.png',selectedIconPath:'./img/music.png'},
+        {text:'Movie', pagePath:'pages/index/index',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
       ]
     }
   }

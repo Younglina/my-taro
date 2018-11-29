@@ -221,16 +221,19 @@ export default class Trending extends Component {
         //     console.log(res)
         // })
     }
+    toLink(e){
+        // <web-view src="https://github.com/PanJiaChen/vue-element-admin"></web-view>
+    }
     render() {
         return (
-            <View>
+            <View onClick={this.toLink}>
                 {this.state.temp.map(item => {
                     return (
                         <View key={item.owner} class='items'>
                             {/* <Text>{item.link}</Text> */}
                             <View class='itemInfo'>
                                 <View>
-                                    <Text>{item.repo}</Text>
+                                    <Text  data-link={item.link}>{item.repo}</Text>
                                     <View class='itemStars'><AtIcon value='star-2' size='15'></AtIcon><Text>{item.stars}</Text></View>
                                 </View>
                                 <Text class='itemDesc'>{item.desc.slice(0,100)}</Text>
