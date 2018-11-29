@@ -14,6 +14,7 @@ class App extends Component {
    */
   config: Config = {
     pages: [
+      'pages/GitHub/Trending/trending',
       'pages/music/music',
       'pages/index/index',
       'pages/MovieDetail/movieDetail',

@@ -38,49 +38,49 @@ export default class Index extends Component {
   render() {
     return (
       <View>
-        <View id="index">
-          <View class="userInfo">
-            <View class="userTitle">
-              <open-data type="userAvatarUrl" lang="zh_CN"></open-data>
+        <View id='index'>
+          <View class='userInfo'>
+            <View class='userTitle'>
+              <open-data type='userAvatarUrl' lang='zh_CN'></open-data>
             </View>
             <View>
-              <open-data type="userNickName" lang="zh_CN"></open-data>
+              <open-data type='userNickName' lang='zh_CN'></open-data>
             </View>
           </View>
-          <View class="mainView">
-            <View class="titleView">
+          <View class='mainView'>
+            <View class='titleView'>
               <Text>影院热映</Text>
-              <Navigator url="/pages/MovieType/MovieType?type=hot&tag=影院热映">更多</Navigator>
+              <Navigator url='/pages/MovieType/MovieType?type=hot&tag=影院热映'>更多</Navigator>
             </View>
             <HotMovie></HotMovie>
           </View>
 
-          <View class="mainView">
-            <View class="titleView">
+          <View class='mainView'>
+            <View class='titleView'>
               <Text>免费在线观看</Text>
-              {/* <Navigator url="#">更多</Navigator> */}
+              {/* <Navigator url='#'>更多</Navigator> */}
             </View>
             <CanWatch></CanWatch>
           </View>
 
-          <View class="mainView">
-            <View class="titleView">
+          <View class='mainView'>
+            <View class='titleView'>
               <Text>新片速递</Text>
-              {/* <Navigator url="#">更多</Navigator> */}
+              {/* <Navigator url='#'>更多</Navigator> */}
             </View>
             <New></New>
           </View>
 
-          <View class="mainView">
-            <View class="titleView">
+          <View class='mainView'>
+            <View class='titleView'>
               <Text>分类预览</Text>
             </View>
             <View onClick={this.whichType}>
               {this.state.types.map(item=>{
                 return (
-                  <View  data-type={item} class="typeItem" key={item}>
+                  <View  data-type={item} class='typeItem' key={item}>
                     <Text  data-type={item}>{item}</Text>
-                    {<Text class="iconfont icon-you-right-a"></Text>}
+                    {<Text class='iconfont icon-you-right-a'></Text>}
                   </View>
                 )
               })}

@@ -32,9 +32,7 @@ export default class MovieType extends Component {
         Taro.request(
             {
                 header: { 'content-type': 'application/xml' },
-                url: thisUrl+
-                    'start=' + self.state.start +
-                    '&count=12'
+                url: `${thisUrl}start=${self.state.start || 0}&count=12`
             }).then(res => {
                 self.setState({ movies: temp.concat(res.data.subjects)});
                 Taro.hideNavigationBarLoading()
@@ -58,7 +56,7 @@ export default class MovieType extends Component {
     render() {
         return (
             <View>
-                <View id="movieType">
+                <View id='movieType'>
                     <Commen movies={this.state.movies} />
                 </View>
             </View >

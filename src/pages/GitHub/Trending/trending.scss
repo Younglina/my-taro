@@ -1,0 +1,43 @@
+.itemOwner,
+.items,
+.itemInfo {
+    display: flex;
+}
+
+.items {
+    justify-content: space-between;
+    border: 1px solid;
+    border-radius: 10rpx;
+    margin-bottom: 30rpx;
+    padding: 10rpx;
+    height: 250rpx;
+    align-items: center;
+    box-shadow: 3rpx 0 5rpx #888888, 0 -3rpx 5rpx #888888, 0 3rpx 5rpx #888888, -3rpx 0 5rpx #888888;
+    .itemInfo {
+        flex-direction: column;
+        flex-grow:1;
+        padding-right:10rpx;
+        .itemDesc {
+            font-size: 28rpx;
+            height: 80rpx;
+            margin-top: 15rpx;
+        }
+        .itemStars {
+            display: inline-block;
+            float: right;
+        }
+    }
+    .itemOwner {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .owner {
+            font-size: 24rpx;
+        }
+        .ownerImg {
+            width: 150rpx;
+            border-radius: 10rpx;
+            height: 150rpx;
+        }
+    }
+}
