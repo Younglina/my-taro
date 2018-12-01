@@ -1,9 +1,12 @@
 ### 前言
 前段时间用mpvue开发过一个仿网易云音乐的微信小程序([链接](https://github.com/lucaswww/my-project))，但似乎mpvue好像是不再维护了，偶然得知有个[Taro](https://nervjs.github.io/taro/docs/README.html)也可以开发小程序，但是用的是[React](https://react.docschina.org/docs/hello-world.html)，正好也想了解了解React所以开发了这个项目。[git地址](https://github.com/lucaswww/my-taro)
-![](https://user-gold-cdn.xitu.io/2018/11/28/1675820ca6aac26e?w=258&h=258&f=jpeg&s=45801)现在这个版本还只有豆瓣电影的，发布成功以后发现正式环境和开发的好像有些东西还需要调一下(😅)
+现在这个版本还只有豆瓣电影的，发布成功以后发现正式环境和开发的好像有些东西还需要调一下(😅)
+![](https://user-gold-cdn.xitu.io/2018/11/28/1675820ca6aac26e?w=258&h=258&f=jpeg&s=45801)
 ### 预览
 
 ![](https://user-gold-cdn.xitu.io/2018/11/29/1676014bb1117745?w=216&h=383&f=gif&s=1641827)
+
+![](https://user-gold-cdn.xitu.io/2018/12/1/16768d6dd96d457e?w=362&h=668&f=png&s=85062)
 ### Taro简介
 Taro 是一套遵循 React 语法规范的 多端开发 解决方案。使用 Taro，我们可以只书写一套代码，再通过 Taro 的编译工具，将源代码分别编译出可以在不同端（微信小程序、H5、RN 等）运行的代码。(摘至[官网](https://nervjs.github.io/taro/docs/README.html))
 
