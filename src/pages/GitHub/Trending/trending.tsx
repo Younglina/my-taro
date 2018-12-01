@@ -1,15 +1,21 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View } from '@tarojs/components'
-import { AtIcon, AtAvatar } from 'taro-ui'
+import { View, PickerView } from '@tarojs/components'
+import { AtIcon, AtAvatar, AtSegmentedControl, AtSearchBar ,AtDivider} from 'taro-ui'
 import './trending.scss'
 export default class Trending extends Component {
     config: Config = {
-        navigationBarTitleText: 'GitHub Trending'
+        navigationBarTitleText: 'GitHub'
     }
     constructor() {
         super(...arguments)
         this.state = {
             data: [],
+            language: '',
+            since: 1,
+            sort: 'stars',
+            gitType: 'taro',
+            list: '',
+            idx:0,
             baseUrl: 'http://anly.leanapp.cn/api/github/trending/vue?since=weekly',
             temp: [
                 {
@@ -220,31 +226,99 @@ export default class Trending extends Component {
         // Taro.request({ url: this.state.baseUrl }).then(res => {
         //     console.log(res)
         // })
+        this.fetchDate('');
     }
-    toLink(e){
+
+    onReachBottom() {
+          this.setState({idx:this.state.idx+6})
+    }
+
+    toLink(e) {
         // <web-view src="https://github.com/PanJiaChen/vue-element-admin"></web-view>
     }
+    onChange(value) {
+        this.setState({ language: value })
+    }
+    onActionClick() {
+        this.fetchDate(this.state.language, this.state.sort)
+    }
+    choseSince(val) {
+        let sort = 'stars'
+        if (val === 0) {
+            sort = 'match'
+            this.setState({ since: 0 })
+        } else if (val === 2) {
+            sort = 'forks'
+            this.setState({ since: 2 })
+        } else {
+            this.setState({ since: 1 })
+        }
+        this.fetchDate(this.state.language, sort)
+
+    }
+    fetchDate(language, sort = 'stars') {
+        Taro.showLoading({
+            title: '获取中...',
+        })
+        language = language || 'taro'
+        let url = `https://api.github.com/search/repositories?q=${language}&sort=${sort}&order=desc`
+        Taro.request({ url: url }).then(res => {
+            this.setState({ list: res.data.items })
+            Taro.hideLoading()
+        })
+
+    }
     render() {
+        let list = this.state.list.slice(0,this.state.idx+6)
         return (
             <View onClick={this.toLink}>
-                {this.state.temp.map(item => {
-                    return (
-                        <View key={item.owner} class='items'>
-                            {/* <Text>{item.link}</Text> */}
-                            <View class='itemInfo'>
-                                <View>
-                                    <Text  data-link={item.link}>{item.repo}</Text>
-                                    <View class='itemStars'><AtIcon value='star-2' size='15'></AtIcon><Text>{item.stars}</Text></View>
+                <AtSearchBar
+                    actionName='搜一下'
+                    value={this.state.language}
+                    onChange={this.onChange.bind(this)}
+                    onActionClick={this.onActionClick.bind(this)}
+                />
+                <AtSegmentedControl
+                    values={['Match', 'Stars', 'Forks']}
+                    onClick={this.choseSince.bind(this)}
+                    current={this.state.since}
+                />
+                <View class="itemsView">
+                    {list && list.map(item => {
+                        return (
+                            <View key={item.owner} class='items'>
+                                {/* <Text>{item.link}</Text> */}
+                                <View class='itemCont'>
+                                    <View class='itemInfo'>
+                                        <View>
+                                            <Text data-link={item.link}>{item.name}</Text>
+                                        </View>
+                                        <Text class='itemDesc'>{item.description ? item.description.slice(0, 100)+'...' : ''}</Text>
+                                    </View>
+                                    <View class='itemOwner'>
+                                        <Image src={item.owner.avatar_url} class='ownerImg'></Image>
+                                        <Text class='owner'>{item.owner.login}</Text>
+                                    </View>
                                 </View>
-                                <Text class='itemDesc'>{item.desc.slice(0,100)}</Text>
+                                <View class='itemStars'>
+                                    <View>
+                                        <Text class='iconfont icon-shezhi_tougao_edit'></Text>
+                                        <Text>{item.language}</Text>
+                                    </View>
+                                    <View>
+                                        <Text class='iconfont icon-star1'></Text>
+                                        <Text>{item.stargazers_count}</Text>
+                                    </View>
+                                    <View>
+                                        <Text class='iconfont icon-fork'></Text>
+                                        <Text>{item.forks}</Text>
+                                    </View>
+                                </View>
                             </View>
-                            <View class='itemOwner'>
-                                <Image src={item.avatar.replace('s=40','s=200')} class='ownerImg'></Image>
-                                <Text class='owner'>{item.owner}</Text>
-                            </View>
-                        </View>
-                    )
-                })}
+                        )
+                    })}
+                </View>
+                {this.state.idx==30 && <AtDivider content='没有更多了' />}
             </View>
         )
     }
