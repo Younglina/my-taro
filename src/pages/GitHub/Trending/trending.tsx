@@ -318,7 +318,7 @@ export default class Trending extends Component {
                         )
                     })}
                 </View>
-                {this.state.idx==30 && <AtDivider content='没有更多了' />}
+                {this.state.idx>=30 && <AtDivider content='没有更多了' />}
             </View>
         )
     }
