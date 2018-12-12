@@ -14,12 +14,12 @@ class App extends Component {
    */
   config: Config = {
     pages: [
+      'pages/Juejin/juejin',
       'pages/GitHub/Trending/trending',
       'pages/index/index',
       'pages/music/music',
       'pages/MovieDetail/movieDetail',
       'pages/MovieType/MovieType',
-      
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -30,7 +30,7 @@ class App extends Component {
     tabBar: {
       list : [
         {text:'GitHub', pagePath:'pages/GitHub/Trending/trending',iconPath:'./img/github.png',selectedIconPath:'./img/github.png'},
-        {text:'Music', pagePath:'pages/music/music',iconPath:'./img/music.png',selectedIconPath:'./img/music.png'},
+        {text:'掘金', pagePath:'pages/Juejin/juejin',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
         {text:'Movie', pagePath:'pages/index/index',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
       ]
     }

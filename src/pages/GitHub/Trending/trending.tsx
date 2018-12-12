@@ -230,7 +230,7 @@ export default class Trending extends Component {
     }
 
     onReachBottom() {
-          this.setState({idx:this.state.idx+6})
+        this.state.idx <= 30 ? this.setState({idx:this.state.idx+6}) :'';
     }
 
     toLink(e) {
