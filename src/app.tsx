@@ -20,6 +20,7 @@ class App extends Component {
       'pages/music/music',
       'pages/MovieDetail/movieDetail',
       'pages/MovieType/MovieType',
+      'pages/Juejin/detail/detail',
     ],
     window: {
       backgroundTextStyle: 'light',

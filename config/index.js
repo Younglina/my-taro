@@ -26,6 +26,8 @@ const config = {
   },
   copy: {
     patterns: [
+      { from: 'src/components/wxParse/wxParse.wxss', to: 'dist/components/wxParse/wxParse.wxss'},
+      { from: 'src/components/wxParse/wxParse.wxml', to: 'dist/components/wxParse/wxParse.wxml'}
     ],
     options: {
     }
