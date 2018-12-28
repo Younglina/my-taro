@@ -30,7 +30,6 @@ export default class JuejinDetail extends Component {
 
     componentDidMount() {
         this.fetchDate()
-       
     }
 
     render() {

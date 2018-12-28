@@ -9,8 +9,8 @@ export default class Index extends Component {
     constructor() {
         super(...arguments)
         this.state = {
-            firstMv: [],
-            baseUrl: 'http://47.100.49.193:3000',
+            banners:[],
+            baseUrl: 'http://134.175.224.127:7003',
             recomMusicList:'',
             recomNewMusicList:''
         }
@@ -18,8 +18,8 @@ export default class Index extends Component {
 
     componentDidMount() {
         let self = this 
-        Taro.request({ url: this.state.baseUrl + '/mv/first' }).then(res => {
-            self.setState({ firstMv: res.data.data.slice(0, 8) })
+        Taro.request({ url: this.state.baseUrl + '/banner' }).then(res => {
+            self.setState({ banners: res.data.banners })
         })
 
         Taro.request({ url: this.state.baseUrl + '/personalized' }).then(res => {
@@ -29,10 +29,15 @@ export default class Index extends Component {
         Taro.request({ url: this.state.baseUrl + '/personalized/newsong' }).then(res => {
             self.setState({ recomNewMusicList: res.data.result.slice(0, 6) })
         })
+
+        // Taro.request({ url: 'http://0.0.0.0:7002/' }).then(res => {
+        //     self.setState({baners: res.data})
+        // })
+        
     }
 
     toListPage(e){
-        console.log(e.target)
+        Taro.navigateTo({url:'./music-playlist/music-playlist?id='+e.target.dataset.id})
     }
 
     render() {
@@ -46,11 +51,11 @@ export default class Index extends Component {
                         circular
                         indicatorDots
                         autoplay>
-                        {this.state.firstMv.map(item => {
+                        {this.state.banners && this.state.banners.map(item => {
                             return (
-                                <SwiperItem>
+                                <SwiperItem key={item.id}>
                                     <View>
-                                        <Image src={item.cover} />
+                                        <Image src={item.imageUrl} />
                                     </View>
                                 </SwiperItem>
                             )
@@ -77,7 +82,7 @@ export default class Index extends Component {
                     <View>
                         <Text>推荐歌单</Text>
                         <View class="listMain" onClick={this.toListPage}>
-                            {this.state.recomMusicList.map(item=>{
+                            {this.state.recomMusicList && this.state.recomMusicList.map(item=>{
                                 return (
                                     <View class="listView" key={item.id}>
                                         <View><Image data-id={item.id} class="listImage" src={item.picUrl}/></View>
@@ -91,7 +96,7 @@ export default class Index extends Component {
                     <View>
                         <Text>最新音乐</Text>
                         <View class="listMain">
-                            {this.state.recomNewMusicList.map(item=>{
+                            {this.state.recomNewMusicList && this.state.recomNewMusicList.map(item=>{
                                 return (
                                     <View class="listView" key={item.id}>
                                         <View><Image data-id={item.id} class="listImage" src={item.song.album.blurPicUrl}/></View>
