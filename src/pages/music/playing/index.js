@@ -4,9 +4,6 @@ import MusicList from '../../../components/musiclist'
 
 export default class Index extends Component {
 
-    config: Config = {
-        navigationBarTitleText: '歌单详情'
-    }
     constructor() {
         super(...arguments)
         this.state = {
@@ -17,7 +14,7 @@ export default class Index extends Component {
     render(){
         return (
             <View>
-                {this.$router.params.id  && <MusicList listId={this.$router.params.id} />}
+                <Image src='' />
             </View>
         )
     }

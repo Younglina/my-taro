@@ -1,5 +1,6 @@
 const globalData = {
-    topNavHeight: 0
+    topNavHeight: 0,
+    currentList:{}
 }
 
 export function set (key, val) {
