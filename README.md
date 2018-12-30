@@ -9,9 +9,11 @@
 
 ### 体验版预览
 
-![](https://user-gold-cdn.xitu.io/2018/12/3/16774b00e557ba87?w=411&h=717&f=gif&s=459643)
+![](https://user-gold-cdn.xitu.io/2018/12/3/16774b00e557ba87?w=411&h=717&f=gif&s=459643)  
 · 18/12/28 歌单详情页面
 ![](https://izaya-1256042946.cos.ap-chengdu.myqcloud.com/9566690551f6ad0338443546913e106.jpg)
+· 18/12/30 播放页面1.0(还没加入歌词)
+![](https://user-gold-cdn.xitu.io/2018/12/30/167fdd71537dc46f?w=375&h=667&f=png&s=264403)
 ### Taro简介
 Taro 是一套遵循 React 语法规范的 多端开发 解决方案。使用 Taro，我们可以只书写一套代码，再通过 Taro 的编译工具，将源代码分别编译出可以在不同端（微信小程序、H5、RN 等）运行的代码，组件可以使用Taro的Taro-ui。(摘至[官网](https://nervjs.github.io/taro/docs/README.html))
 
