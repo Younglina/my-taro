@@ -11,11 +11,30 @@ $touming: unquote('#ffffffb3');
         height: 100%;
         background-size: 200%;
         background-position: center;
-        filter: blur(30Px);
+        filter: blur(60Px);
         z-index: -1;
     }
-    .stop-anim{
-        animation-play-state:paused !important;
+    .stop-anim {
+        animation-play-state: paused !important;
+    }
+    .play-irc-view {
+        flex: 1;
+        overflow: auto;
+        min-height: 700rpx;
+        width: 100%;
+        .play-irc {
+            width: 100%;
+            text-align: center;
+            font-size: 28rpx;
+            color:#ffffffb3;
+            height: 900rpx;
+            .play-light{
+                color:red;
+            }
+            view {
+                margin: 20rpx 0;
+            }
+        }
     }
     .play-img-view {
         flex-grow: 1;
@@ -25,7 +44,7 @@ $touming: unquote('#ffffffb3');
         border-radius: 100%;
         display: flex;
         align-items: center;
-        justify-content: center; 
+        justify-content: center;
         animation: round 20s linear infinite;
         .play-img {
             width: 450rpx;
@@ -39,7 +58,7 @@ $touming: unquote('#ffffffb3');
             position: absolute;
             color: currentColor;
             width: 650rpx;
-            height: 650rpx; 
+            height: 650rpx;
             animation: boneus 2s ease infinite;
             background: radial-gradient( transparent 230rpx, $touming 234rpx, transparent 236rpx, transparent 266rpx, $touming 266rpx, transparent 270rpx, transparent 320rpx, $touming 322rpx, transparent 324rpx, transparent)
         }
@@ -62,9 +81,8 @@ $touming: unquote('#ffffffb3');
         }
         .play-cic3 {
             top: 450rpx;
-            left:123rpx;
-        } 
-        // .play-img-before,.play-img-after  {
+            left: 123rpx;
+        } // .play-img-before,.play-img-after  {
         //     border-radius: 100%;
         //     position: absolute;
         //     color: currentColor;
@@ -81,29 +99,31 @@ $touming: unquote('#ffffffb3');
         //     )
         // }
     }
-    .play-slider-view{
+    .play-slider-view {
         display: flex;
         width: 100%;
         align-items: center;
-        font-size:20rpx;
+        font-size: 20rpx;
         padding: 0 30rpx 10rpx;
-        box-sizing:border-box;
-        color:white;
-        .play-slider{
+        box-sizing: border-box;
+        color: white;
+        .play-slider {
             flex-grow: 1;
         }
     }
 }
-.icon-view{
+
+.icon-view {
     display: flex;
     justify-content: space-around;
     width: 100%;
     padding-bottom: 30rpx;
-    .iconfont{
-        font-size:52rpx;
-        color:white;
+    .iconfont {
+        font-size: 52rpx;
+        color: white;
     }
 }
+
 @keyframes round {
     from {
         transform: rotate(0deg);

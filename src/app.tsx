@@ -23,11 +23,11 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/music/playing/index',
       'pages/music/music',
+      'pages/music/playing/index',
+      
       'pages/music/comment/index',
       'pages/music/music-playlist/music-playlist',
-      
       'pages/Juejin/juejin',
       'pages/GitHub/Trending/trending',
       'pages/index/index',

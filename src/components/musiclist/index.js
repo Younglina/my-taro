@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View } from '@tarojs/components';
+import { View, Text } from '@tarojs/components';
 import { AtList, AtListItem,AtActionSheet,AtActionSheetItem } from "taro-ui"
 import './index.scss';
 import { set as setGlobalData } from '../../global_data'
@@ -39,9 +39,22 @@ export default class MusicList extends Component {
     }
 
     handleClick(e) {
+        console.log(e.currentTarget);
         if(e.target.dataset.index){
             this.setState({isShowSheet:true,currentIndex:e.target.dataset.index-1})
+        }else if(e.currentTarget.dataset.midx){
+            const cp = this.state.listData.tracks[e.currentTarget.dataset.midx]
+            setGlobalData('currentPlaying',{
+                name:cp.name,
+                img:cp.al.picUrl,
+                id: cp.id,
+                dt:cp.dt,
+            })
+            Taro.navigateTo({
+                url:'/pages/music/playing/index'
+            })
         }
+        
     }
 
     toComment(){
@@ -113,7 +126,9 @@ export default class MusicList extends Component {
                 <AtList>
                     {data.tracks && data.tracks.map((item, idx) => {
                         return (
-                            <AtListItem onClick={this.handleClick} title={item.name} key={item.id} note={item.ar[0].name + '-' + item.al.name} arrow='list' iconInfo={{ value: (idx + 1), type: 'idx' }} />
+                            <View onClick={this.handleClick}  data-midx={idx} key={item.id}>
+                                <AtListItem title={item.name}  note={item.ar[0].name + '-' + item.al.name} arrow='list' iconInfo={{ value: (idx + 1), type: 'idx' }} />
+                            </View>
                         )
                     }
                     )}
@@ -145,16 +160,3 @@ export default class MusicList extends Component {
         )
     }
 }
-
-{/* <View style="position:fixed;z-index:100;width:100%;">
-                    <AtNavBar
-                        onClickRgIconSt={this.handleClick}
-                        onClickRgIconNd={this.handleClick}
-                        onClickLeftIcon={this.handleClick}
-                        color='#000'
-                        title='NavBar 导航栏示例'
-                        leftText='返回'
-                        rightFirstIconType='bullet-list'
-                        rightSecondIconType='user'
-                    />
-                </View> */}
