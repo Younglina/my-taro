@@ -23,17 +23,12 @@ class App extends Component {
    */
   config: Config = {
     pages: [
+      'pages/music/user-music/index',
       'pages/music/music',
       'pages/music/playing/index',
-      
       'pages/music/comment/index',
+      
       'pages/music/music-playlist/music-playlist',
-      'pages/Juejin/juejin',
-      'pages/GitHub/Trending/trending',
-      'pages/index/index',
-      'pages/MovieDetail/movieDetail',
-      'pages/MovieType/MovieType',
-      'pages/Juejin/detail/detail',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -44,21 +39,27 @@ class App extends Component {
     },
     tabBar: {
       list : [
-        {text:'GitHub', pagePath:'pages/GitHub/Trending/trending',iconPath:'./img/github.png',selectedIconPath:'./img/github.png'},
-        {text:'掘金', pagePath:'pages/Juejin/juejin',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
+        // {text:'GitHub', pagePath:'pages/GitHub/Trending/trending',iconPath:'./img/github.png',selectedIconPath:'./img/github.png'},
+        // {text:'掘金', pagePath:'pages/Juejin/juejin',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
+        // {text:'Movie', pagePath:'pages/index/index',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
         {text:'musice', pagePath:'pages/music/music',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
-        {text:'Movie', pagePath:'pages/index/index',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
+        {text:'musice', pagePath:'pages/music/user-music/index',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
       ]
     }
   }
 
-  componentDidMount () {
-    Taro.getSystemInfo({
-      success:res=>{
-        setGlobalData('topNavHeight',res.statusBarHeight)
-      }
-    })
-  }
+  // componentDidMount () {
+  //   Taro.request({
+  //     url:'http://134.175.224.127:7003/login/cellphone?phone=15179816883&password=wangzhiqiang.1'
+  //   }).then(res=>{
+  //     let tempCookie = ''
+  //     res.cookies.map(item=>{
+  //       tempCookie+=(`;${item.name}:${item.value}`)
+  //     })
+  //     setGlobalData('_cookies',tempCookie.substr(1))
+  //     setGlobalData('_userData',res.data)
+  //   })
+  // }
 
   componentDidShow () {}
 

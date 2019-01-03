@@ -1,6 +1,7 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, Text, Swiper } from '@tarojs/components'
 import './music.scss'
+
 export default class Index extends Component {
 
     config: Config = {
@@ -42,15 +43,16 @@ export default class Index extends Component {
 
     render() {
         return (
-            <View id="music">
+            <View id='music'>
                 <View>
                     <Swiper
-                        className='swiper'
-                        indicatorColor='#999'
-                        indicatorActiveColor='#333'
-                        circular
-                        indicatorDots
-                        autoplay>
+                      className='swiper'
+                      indicatorColor='#999'
+                      indicatorActiveColor='#333'
+                      circular
+                      indicatorDots
+                      autoplay
+                    >
                         {this.state.banners && this.state.banners.map(item => {
                             return (
                                 <SwiperItem key={item.id}>
@@ -63,30 +65,30 @@ export default class Index extends Component {
                     </Swiper>
                 </View>
 
-                <View class="iconGroup">
+                <View class='iconGroup'>
                     <View>
-                        <Text class="iconfont icon-calendar"></Text>
-                        <Text class="iconTitle">每日推荐</Text>
+                        <Text class='iconfont icon-calendar'></Text>
+                        <Text class='iconTitle'>每日推荐</Text>
                     </View>
                     <View>
-                        <Text class="iconfont icon-yinleliebiao"></Text>
-                        <Text class="iconTitle">歌单</Text>
+                        <Text class='iconfont icon-yinleliebiao'></Text>
+                        <Text class='iconTitle'>歌单</Text>
                     </View>
                     <View>
-                        <Text class="iconfont icon-paixingbang"></Text>
-                        <Text class="iconTitle">排行榜</Text>
+                        <Text class='iconfont icon-paixingbang'></Text>
+                        <Text class='iconTitle'>排行榜</Text>
                     </View>
                 </View>
 
                 <View>
                     <View>
                         <Text>推荐歌单</Text>
-                        <View class="listMain" onClick={this.toListPage}>
+                        <View class='listMain' onClick={this.toListPage}>
                             {this.state.recomMusicList && this.state.recomMusicList.map(item=>{
                                 return (
-                                    <View class="listView" key={item.id}>
-                                        <View><Image data-id={item.id} class="listImage" src={item.picUrl}/></View>
-                                        <Text class="listTitle">{item.name}</Text>
+                                    <View class='listView' key={item.id}>
+                                        <View><Image data-id={item.id} class='listImage' src={item.picUrl} /></View>
+                                        <Text class='listTitle'>{item.name}</Text>
                                     </View>
                                 )
                             })}
@@ -95,13 +97,13 @@ export default class Index extends Component {
 
                     <View>
                         <Text>最新音乐</Text>
-                        <View class="listMain">
+                        <View class='listMain'>
                             {this.state.recomNewMusicList && this.state.recomNewMusicList.map(item=>{
                                 return (
-                                    <View class="listView" key={item.id}>
-                                        <View><Image data-id={item.id} class="listImage" src={item.song.album.blurPicUrl}/></View>
-                                        <Text class="listTitleNoWrap">{item.name}</Text>
-                                        <Text class="listTitle">{item.song.artists[0].name}</Text>
+                                    <View class='listView' key={item.id}>
+                                        <View><Image data-id={item.id} class='listImage' src={item.song.album.blurPicUrl} /></View>
+                                        <Text class='listTitleNoWrap'>{item.name}</Text>
+                                        <Text class='listTitle'>{item.song.artists[0].name}</Text>
                                     </View>
                                 )
                             })}

@@ -1,0 +1,98 @@
+.user-main {
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+    .user-info {
+        display: flex;
+        flex-direction: column;
+        padding: 60rpx 20rpx 30rpx;
+        color: white;
+        font-size: 24rpx;
+        .user-avator {
+            width: 140rpx;
+            height: 140rpx;
+            border-radius: 100%;
+            margin-bottom: 20rpx;
+        }
+        .user-name {
+            font-size: 32rpx;
+            font-weight: bold;
+        }
+        .user-level {
+            font-style: initial;
+            font-size: 20rpx;
+            padding: 4rpx 10rpx;
+            margin-left: 10rpx;
+            border-radius: 24rpx;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        .user-shu {
+            margin: 0 10rpx;
+        }
+        .user-info-item {
+            margin: 5rpx 0;
+        }
+    }
+    .user-music {
+        background-color: white;
+        border-top-left-radius: 16rpx;
+        border-top-right-radius: 16rpx;
+        margin-top: 20rpx;
+        flex-shrink: 2;
+        overflow: auto;
+        .user-nav {
+            display: flex;
+            justify-content: space-around;
+            font-size: 26rpx;
+            position: fixed;
+            width: 100%;
+            height: 48rpx;
+            padding: 10rpx 0;
+            background-color: white;
+            border-top-left-radius: 16rpx;
+            border-top-right-radius: 16rpx;
+            text {
+                padding-bottom: 10rpx;
+            }
+            .active {
+                color: red;
+                border-bottom: 1px solid currentColor;
+            }
+        }
+        .lists{
+            margin-top: 65rpx;
+        }
+        .music-sub-title {
+            background-color: gainsboro;
+            font-size: 24rpx;
+            padding: 4rpx 10rpx;
+            display: flex;
+            justify-content: space-between;
+        }
+        .list-music {
+            display: flex;
+            padding: 10rpx;
+            .list-img {
+                width: 100rpx;
+                height: 100rpx;
+                border-radius: 6rpx;
+            }
+        }
+        .list-info {
+            margin-left: 20rpx;
+            .list-name {
+                font-size: 24rpx;
+                margin-top: 10rpx;
+            }
+            .list-count {
+                font-size: 20rpx;
+                color: gray;
+                margin: 10rpx 0;
+            }
+        }
+    }
+}
