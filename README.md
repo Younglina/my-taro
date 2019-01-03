@@ -3,17 +3,18 @@
 
 ### 体验版预览
 
-![](https://user-gold-cdn.xitu.io/2018/12/3/16774b00e557ba87?w=411&h=717&f=gif&s=459643)  
+![](https://user-gold-cdn.xitu.io/2018/12/3/16774b00e557ba87?w=411&h=717&f=gif&s=459643)    
 · 18/12/28 歌单详情页面  
-![](https://izaya-1256042946.cos.ap-chengdu.myqcloud.com/9566690551f6ad0338443546913e106.jpg)
+![](https://izaya-1256042946.cos.ap-chengdu.myqcloud.com/9566690551f6ad0338443546913e106.jpg)  
 · 18/12/30 播放页面1.0(还没加入歌词)  
-![](https://user-gold-cdn.xitu.io/2018/12/30/167fdd71537dc46f?w=375&h=667&f=png&s=264403)
+![](https://user-gold-cdn.xitu.io/2018/12/30/167fdd71537dc46f?w=375&h=667&f=png&s=264403)  
 · 19/01/02 播放页面2.0  
-![](https://user-gold-cdn.xitu.io/2019/1/3/168131590c080b22?w=1080&h=1920&f=png&s=452879)
+
+![](https://user-gold-cdn.xitu.io/2019/1/3/168131b237b3639e?w=263&h=453&f=png&s=133132)  
 · 19/01/03 个人页面  
-![](https://user-gold-cdn.xitu.io/2019/1/3/168131695dd4ee86?w=1080&h=1920&f=png&s=854341)
+![](https://user-gold-cdn.xitu.io/2019/1/3/16813185b32261c9?w=278&h=476&f=png&s=118548)  
 · 19/01/03 每日推荐  
-![](https://user-gold-cdn.xitu.io/2019/1/3/1681316eb2970f81?w=381&h=655&f=png&s=153742)
+![](https://user-gold-cdn.xitu.io/2019/1/3/1681316eb2970f81?w=381&h=655&f=png&s=153742)  
 ### Taro简介
 Taro 是一套遵循 React 语法规范的 多端开发 解决方案。使用 Taro，我们可以只书写一套代码，再通过 Taro 的编译工具，将源代码分别编译出可以在不同端（微信小程序、H5、RN 等）运行的代码，组件可以使用Taro的Taro-ui。(摘至[官网](https://nervjs.github.io/taro/docs/README.html))
 
