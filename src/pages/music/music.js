@@ -30,17 +30,16 @@ export default class Index extends Component {
         Taro.request({ url: this.state.baseUrl + '/personalized/newsong' }).then(res => {
             self.setState({ recomNewMusicList: res.data.result.slice(0, 6) })
         })
-
-        // Taro.request({ url: 'http://0.0.0.0:7002/' }).then(res => {
-        //     self.setState({baners: res.data})
-        // })
         
     }
 
     toListPage(e){
         Taro.navigateTo({url:'./music-playlist/music-playlist?id='+e.target.dataset.id})
     }
-
+    toSomePage(page){
+        console.log(page);
+        Taro.navigateTo({url:`./${page}/index`})
+    }
     render() {
         return (
             <View id='music'>
@@ -66,7 +65,7 @@ export default class Index extends Component {
                 </View>
 
                 <View class='iconGroup'>
-                    <View>
+                    <View onClick={this.toSomePage.bind(this,'day-recom')}>
                         <Text class='iconfont icon-calendar'></Text>
                         <Text class='iconTitle'>每日推荐</Text>
                     </View>
@@ -80,7 +79,7 @@ export default class Index extends Component {
                     </View>
                 </View>
 
-                <View>
+                <View style='padding:10rpx;'>
                     <View>
                         <Text>推荐歌单</Text>
                         <View class='listMain' onClick={this.toListPage}>

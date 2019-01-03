@@ -23,8 +23,9 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/music/user-music/index',
       'pages/music/music',
+      'pages/music/user-music/index',
+      'pages/music/day-recom/index',
       'pages/music/playing/index',
       'pages/music/comment/index',
       
@@ -48,18 +49,14 @@ class App extends Component {
     }
   }
 
-  // componentDidMount () {
-  //   Taro.request({
-  //     url:'http://134.175.224.127:7003/login/cellphone?phone=15179816883&password=wangzhiqiang.1'
-  //   }).then(res=>{
-  //     let tempCookie = ''
-  //     res.cookies.map(item=>{
-  //       tempCookie+=(`;${item.name}:${item.value}`)
-  //     })
-  //     setGlobalData('_cookies',tempCookie.substr(1))
-  //     setGlobalData('_userData',res.data)
-  //   })
-  // }
+  componentDidMount () {
+    Taro.request({
+      url:'http://134.175.224.127:7003/login/cellphone?phone=15179816883&password=wangzhiqiang.1'
+    }).then(res=>{
+      setGlobalData('_cookies',res.header['set-cookie'])
+      setGlobalData('_userData',res.data)
+    })
+  }
 
   componentDidShow () {}
 
