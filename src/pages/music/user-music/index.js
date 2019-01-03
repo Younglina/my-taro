@@ -23,12 +23,11 @@ export default class Index extends Component {
 
     componentDidMount() {
         Taro.request({
-            url:`http://134.175.224.127:7003/user/subcount`,
+            url:`http://134.175.224.127:7003/user/detail?uid=${getGlobalData('_userData').account.id}`,
             header:{
                 cookie:getGlobalData('_cookies'),
             },
         }).then(res=>{
-            console.log(res);
             this.setState({userData: res.data })
             Taro.hideNavigationBarLoading()
             Taro.hideLoading()
@@ -40,7 +39,7 @@ export default class Index extends Component {
                 cookie:getGlobalData('_cookies'),
             },
         }).then(res=>{
-            this.setState({ userMusic: res.data })
+            this.setState({ userMusic: res.data.playlist })
         })
         // let userData = {
         //     "level": 9,
