@@ -69,7 +69,7 @@ export default class Index extends Component {
                         <Text class='iconfont icon-calendar'></Text>
                         <Text class='iconTitle'>每日推荐</Text>
                     </View>
-                    <View>
+                    <View onClick={this.toSomePage.bind(this,'top-playlist')}>
                         <Text class='iconfont icon-yinleliebiao'></Text>
                         <Text class='iconTitle'>歌单</Text>
                     </View>
