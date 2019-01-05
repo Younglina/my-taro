@@ -1,8 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import Index from './pages/index'
 
-import { set as setGlobalData } from './global_data'
-
 import './app.scss'
 import './icon.scss'
 class App extends Component {
@@ -23,11 +21,10 @@ class App extends Component {
    */
   config: Config = {
     pages: [
+      'pages/music/user-music/index',
       'pages/music/music',
       'pages/music/top-playlist/index',
       'pages/music/highquality-playlist/index',
-
-      'pages/music/user-music/index',
       'pages/music/day-recom/index',
       'pages/music/playing/index',
       'pages/music/comment/index',
@@ -46,20 +43,11 @@ class App extends Component {
         // {text:'GitHub', pagePath:'pages/GitHub/Trending/trending',iconPath:'./img/github.png',selectedIconPath:'./img/github.png'},
         // {text:'掘金', pagePath:'pages/Juejin/juejin',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
         // {text:'Movie', pagePath:'pages/index/index',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
-        {text:'musice', pagePath:'pages/music/music',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
-        {text:'musice', pagePath:'pages/music/user-music/index',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
+        {text:'音乐', pagePath:'pages/music/music',iconPath:'./img/music.png',selectedIconPath:'./img/music.png'},
+        {text:'个人', pagePath:'pages/music/user-music/index',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
       ]
     }
   }
-
-  // componentDidMount () {
-  //   Taro.request({
-  //     url:'http://134.175.224.127:7003/login/cellphone?phone=15179816883&password=wangzhiqiang.1'
-  //   }).then(res=>{
-  //     setGlobalData('_cookies',res.header['set-cookie'])
-  //     setGlobalData('_userData',res.data)
-  //   })
-  // }
 
   componentDidShow () {}
 

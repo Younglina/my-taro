@@ -73,6 +73,10 @@ export default class Index extends Component {
     setPlay(index = 0) {
         let temp = setInterval(() => {
             let curId
+            if(index>getGlobalData('currentPlaying').totalValue){
+                clearInterval(this.state.playing);
+                return;
+            }
             ++index;
             this.state.msP.forEach((item,idx)=>{
                 if(this.state.msP[idx-1]&&this.state.msP[idx+1]){
@@ -101,6 +105,11 @@ export default class Index extends Component {
     toggleShow() {
         this.setState({ togShow: !this.state.togShow })
     }
+    toComment(){
+        Taro.navigateTo({
+            url:`/pages/music/comment/index?type=music&id=${getGlobalData('currentPlaying').id}`
+        })
+    }
     render() {
         return (
             <View class='play-main'>
@@ -128,7 +137,7 @@ export default class Index extends Component {
                 <View class='icon-view'>
                     <Text class='iconfont icon-heart'></Text>
                     <Text class='iconfont icon-plus-download'></Text>
-                    <Text class='iconfont icon-pinglun'></Text>
+                    <Text class='iconfont icon-pinglun' onClick={this.toComment}></Text>
                     <Text class='iconfont icon-menu2'></Text>
                 </View>
 

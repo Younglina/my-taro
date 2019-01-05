@@ -1,6 +1,7 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text, Image } from '@tarojs/components'
 import { set as setGlobalData,get as getGlobalData} from '../../../global_data'
+import './index.scss'
 
 export default class Index extends Component {
 

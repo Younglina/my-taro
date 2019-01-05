@@ -42,18 +42,18 @@
     justify-content: space-between;
     margin: 10rpx;
     .m-img {
-        width: 80rpx;
-        height: 80rpx;
+        width: 120rpx;
+        height: 120rpx;
         border-radius: 6rpx;
     }
     .m-arts {
         flex: 1;
         margin-left: 20px;
         .m-name {
-            font-size: 24rpx;
+            font-size: 28rpx;
         }
         .m-ars {
-            font-size: 20rpx;
+            font-size: 24rpx;
             color: gray;
         }
     }

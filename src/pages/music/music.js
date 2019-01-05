@@ -1,5 +1,7 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Text, Swiper } from '@tarojs/components'
+import { View, Text, Swiper,Image } from '@tarojs/components'
+import {set as setGlobalData} from '../../global_data'
+
 import './music.scss'
 
 export default class Index extends Component {
@@ -39,6 +41,21 @@ export default class Index extends Component {
     toSomePage(page){
         console.log(page);
         Taro.navigateTo({url:`./${page}/index`})
+    }
+    toPlaying(e){
+        const cp = this.state.recomNewMusicList[e.target.dataset.idx]
+        let obj = {
+            name:cp.name,
+            img:cp.song.album.blurPicUrl,
+            id: cp.id,
+            dt:cp.song.duration,
+            username: cp.song.artists[0].name
+        }
+        setGlobalData('currentList',obj)
+        setGlobalData('currentPlaying',obj)
+        Taro.navigateTo({
+            url:'/pages/music/playing/index'
+        })
     }
     render() {
         return (
@@ -96,11 +113,11 @@ export default class Index extends Component {
 
                     <View>
                         <Text>最新音乐</Text>
-                        <View class='listMain'>
-                            {this.state.recomNewMusicList && this.state.recomNewMusicList.map(item=>{
+                        <View class='listMain' onClick={this.toPlaying}>
+                            {this.state.recomNewMusicList && this.state.recomNewMusicList.map((item,idx)=>{
                                 return (
                                     <View class='listView' key={item.id}>
-                                        <View><Image data-id={item.id} class='listImage' src={item.song.album.blurPicUrl} /></View>
+                                        <View><Image data-idx={idx} class='listImage' src={item.song.album.blurPicUrl} /></View>
                                         <Text class='listTitleNoWrap'>{item.name}</Text>
                                         <Text class='listTitle'>{item.song.artists[0].name}</Text>
                                     </View>

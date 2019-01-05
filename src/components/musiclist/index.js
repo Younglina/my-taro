@@ -59,7 +59,7 @@ export default class MusicList extends Component {
 
     toComment(){
         Taro.navigateTo({
-            url:`/pages/music/comment/index?id=${this.state.listData.id}`
+            url:`/pages/music/comment/index?type=playlist&id=${this.state.listData.id}`
         })
     }
 
