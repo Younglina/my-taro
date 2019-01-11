@@ -1,6 +1,7 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import MusicList from '../../../components/musiclist'
+import './index.scss'
 
 export default class Index extends Component {
 

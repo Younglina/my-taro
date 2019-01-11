@@ -37,6 +37,27 @@
             margin: 5rpx 0;
         }
     }
+    .user-scroll-view {
+        white-space: nowrap;
+        display: inline-block;
+        overflow-x: auto;
+        position: relative;
+    }
+    #music,
+    #active,
+    #about {
+        display: inline-block;
+        width: 100%;
+    }
+    #active,#about{
+        top:68rpx;
+        padding: 0 10rpx;
+        width:calc(100vw - 10rpx);
+        position: absolute;
+    }
+    #about{
+        margin-left: 100vw;
+    }
     .user-music {
         background-color: white;
         border-top-left-radius: 16rpx;
@@ -44,6 +65,7 @@
         margin-top: 20rpx;
         flex-shrink: 2;
         overflow: auto;
+        
         .user-nav {
             display: flex;
             justify-content: space-around;
@@ -53,6 +75,7 @@
             height: 48rpx;
             padding: 10rpx 0;
             background-color: white;
+            z-index: 222;
             border-top-left-radius: 16rpx;
             border-top-right-radius: 16rpx;
             text {
@@ -94,9 +117,57 @@
                 margin: 10rpx 0;
             }
         }
+        .user-event {
+            position: absolute;
+            top: 48rpx;
+            background-color: white;
+            right: -1000rpx;
+            animation: slideIn 2s linear forwards;
+            ;
+        }
+        .slideInRight {
+            animation: slideIn 2s linear forwards;
+            ;
+        }
+        .noactive {
+            right: -1000rpx;
+        }
+    }
+    .e-main {
+        display: flex;
+        border-bottom: 1px solid gainsboro;
+        .e-user {
+            width: 100rpx;
+            height: 100rpx;
+            border-radius: 100%;
+        }
+        .e-info {
+            flex-grow: 1;
+            font-size: 28rpx;
+            margin-left: 20rpx;
+            overflow: hidden;
+            .e-date {
+                font-size: 24rpx;
+                color: gray;
+                margin-top: 10rpx;
+            }
+            .e-title {
+                margin-top: 20rpx;
+            }
+        }
     }
 }
-.log-form{
+
+@keyframes slideIn {
+    from {
+        right: 0;
+    }
+    to {
+        left: 0;
+    }
+}
+
+.log-form {
     padding: 0 20rpx;
     .bg-img {
         position: absolute;
@@ -116,7 +187,6 @@
             border-radius: 10rpx;
         }
     }
-    
     .login-btn {
         text-align: center;
         margin-top: 40rpx;

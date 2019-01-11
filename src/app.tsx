@@ -22,6 +22,7 @@ class App extends Component {
   config: Config = {
     pages: [
       'pages/music/user-music/index',
+      'pages/music/my-friend/index',
       'pages/music/music',
       'pages/music/top-playlist/index',
       'pages/music/highquality-playlist/index',
