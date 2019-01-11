@@ -22,6 +22,7 @@ class App extends Component {
   config: Config = {
     pages: [
       'pages/music/user-music/index',
+      'pages/music/my-music/index',
       'pages/music/my-friend/index',
       'pages/music/music',
       'pages/music/top-playlist/index',
@@ -45,6 +46,7 @@ class App extends Component {
         // {text:'掘金', pagePath:'pages/Juejin/juejin',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
         // {text:'Movie', pagePath:'pages/index/index',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
         {text:'音乐', pagePath:'pages/music/music',iconPath:'./img/music.png',selectedIconPath:'./img/music.png'},
+        {text:'我的', pagePath:'pages/music/my-music/index',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
         {text:'个人', pagePath:'pages/music/user-music/index',iconPath:'./img/movie.png',selectedIconPath:'./img/movie.png'},
       ]
     }

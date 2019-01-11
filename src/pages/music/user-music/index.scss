@@ -42,27 +42,36 @@
         display: inline-block;
         overflow-x: auto;
         position: relative;
+        margin-top:80rpx;
     }
-    #music,
     #active,
-    #about {
+    #about,
+    #followed,#follower {
         display: inline-block;
         width: 100%;
     }
-    #active,#about{
-        top:68rpx;
+
+    .item-thumb__info{
+        border-radius:50%;
+    }
+
+    #active,#about,#follower{
         padding: 0 10rpx;
         width:calc(100vw - 10rpx);
         position: absolute;
     }
-    #about{
+    
+    #active{
         margin-left: 100vw;
+    }
+    #about{
+        margin-left: 200vw;
     }
     .user-music {
         background-color: white;
         border-top-left-radius: 16rpx;
         border-top-right-radius: 16rpx;
-        margin-top: 20rpx;
+        margin-top: 80rpx;
         flex-shrink: 2;
         overflow: auto;
         
@@ -88,34 +97,6 @@
         }
         .lists {
             margin-top: 65rpx;
-        }
-        .music-sub-title {
-            background-color: gainsboro;
-            font-size: 24rpx;
-            padding: 4rpx 10rpx;
-            display: flex;
-            justify-content: space-between;
-        }
-        .list-music {
-            display: flex;
-            padding: 10rpx;
-            .list-img {
-                width: 100rpx;
-                height: 100rpx;
-                border-radius: 6rpx;
-            }
-        }
-        .list-info {
-            margin-left: 20rpx;
-            .list-name {
-                font-size: 24rpx;
-                margin-top: 10rpx;
-            }
-            .list-count {
-                font-size: 20rpx;
-                color: gray;
-                margin: 10rpx 0;
-            }
         }
         .user-event {
             position: absolute;
