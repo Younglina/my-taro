@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components';
-import { AtList, AtListItem,AtActionSheet,AtActionSheetItem } from "taro-ui"
+import { AtList, AtListItem,AtActionSheet,AtActionSheetItem } from "wTaro"
 import './index.scss';
 import { set as setGlobalData } from '../../global_data'
 

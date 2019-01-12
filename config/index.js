@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = {
   projectName: 'my-taro',
   date: '2018-11-17',
@@ -27,10 +29,16 @@ const config = {
   copy: {
     patterns: [
       { from: 'src/components/wxParse/wxParse.wxss', to: 'dist/components/wxParse/wxParse.wxss'},
-      { from: 'src/components/wxParse/wxParse.wxml', to: 'dist/components/wxParse/wxParse.wxml'}
+      { from: 'src/components/wxParse/wxParse.wxml', to: 'dist/components/wxParse/wxParse.wxml'},
+      { from: 'src/img/day.jpeg', to: 'dist/img/day.jpeg'},
+      { from: 'src/img/login.jpeg', to: 'dist/img/login.jpeg'},
     ],
     options: {
     }
+  },
+  alias: {
+    'wTaro': path.resolve(__dirname, '..', 'src/components/taro-ui/dist/index'),
+    'globaData': path.resolve(__dirname, '..', 'src/global_data.js'),
   },
   weapp: {
     module: {

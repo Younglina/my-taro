@@ -1,7 +1,7 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text, Image } from '@tarojs/components'
-import { get as getGlobalData } from '../../../global_data'
-import {AtList,AtListItem} from '../../../components/taro-ui/dist/weapp/index'
+import { get as getGlobalData } from 'globaData'
+import {AtList,AtListItem,AtFloatLayout} from 'wTaro'
 import './index.scss'
 
 export default class Index extends Component {
@@ -14,8 +14,10 @@ export default class Index extends Component {
         this.state = {
             userData: {},
             userMusic:[],
+            isOpened:false,
+            musics:[],
             myList:[
-                {icon:'iconfont icon-play-circle',text:'最近播放'},
+                {icon:'iconfont icon-play-circle',text:'最近播放',playCount:0},
                 {icon:'iconfont icon-plus-download',text:'下载管理'},
                 {icon:'iconfont icon-music',text:'我的电台'},
                 {icon:'iconfont icon-star1',text:'我的收藏'},
@@ -33,12 +35,29 @@ export default class Index extends Component {
         }).then(res => {
             this.setState({ userMusic: res.data.playlist })
         })
+        this.fetcHistory()
     }
 
+    fetcHistory(){
+        Taro.request({
+            url:'http://134.175.224.127:7003/user/record?uid=111736605&type=1',
+        }).then(res=>{
+            this.setState({musics:res.data.weekData})
+        })
+    }
+
+    handleClick(e){
+        // Taro.navigateTo({url:e.currentTarget.dataset.path});
+        this.setState({isOpened: !this.state.isOpened})
+    }
+    handleClose(){
+        this.setState({isOpened: false})
+    }
     render() {
         let userInfo = this.state.userData
         const userMusic = this.state.userMusic
         const len = userInfo.profile && userInfo.profile.playlistCount
+        let musics = this.state.musics;
         return (
             <View class='my-music'>
                 <View class='user-info'>
@@ -47,11 +66,11 @@ export default class Index extends Component {
                     <Text class='open-vip'>开通会员</Text>
                 </View>
                 <View class='user-list'>
-                    <AtList>
-                        {this.state.myList.map((item) => {
+                    <AtList >
+                        {this.state.myList.map((item,idx) => {
                             return (
-                                <View key={item.icon}>
-                                    <AtListItem title={item.text} iconInfo={{ value: item.icon,type:'a'}} />
+                                <View onClick={this.handleClick} key={idx}>
+                                    <AtListItem title={`${item.text}${idx==0?'('+musics.length+')':''}`} iconInfo={{ value: item.icon}} />
                                 </View>
                             )
                         }
@@ -94,6 +113,21 @@ export default class Index extends Component {
                         })}
                     </View>
                     {/* 音乐 */}
+
+                    {this.state.isOpened && 
+                    <AtFloatLayout isOpened title='播放历史' onClose={this.handleClose}>
+                        <AtList>
+                                {musics && musics.map((item, idx) => {
+                                    return (
+                                        <View  data-midx={idx} key={item.song.id}>
+                                            <AtListItem title={item.song.name}  note={item.song.ar[0].name + '-' + item.song.al.name} arrow='list' iconInfo={{ value: (idx + 1), type: 'idx' }} />
+                                        </View>
+                                    )
+                                }
+                                )}
+                        </AtList>
+                    </AtFloatLayout>
+                    }
             </View>
         )
     }

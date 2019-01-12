@@ -23,7 +23,7 @@ class App extends Component {
     pages: [
       'pages/music/user-music/index',
       'pages/music/my-music/index',
-      'pages/music/my-friend/index',
+      'pages/music/history/index',
       'pages/music/music',
       'pages/music/top-playlist/index',
       'pages/music/highquality-playlist/index',
