@@ -7,7 +7,7 @@ import './index.scss'
 export default class Index extends Component {
 
     config: Config = {
-        navigationBarTitleText: '歌单详情'
+        navigationBarTitleText: '我的音乐'
     }
     constructor() {
         super(...arguments)
@@ -45,9 +45,10 @@ export default class Index extends Component {
             this.setState({musics:res.data.weekData})
         })
     }
-
-    handleClick(e){
-        // Taro.navigateTo({url:e.currentTarget.dataset.path});
+    toListPage(e){
+        Taro.navigateTo({url:'../music-playlist/music-playlist?id='+e.target.dataset.id})
+    }
+    handleClick(){
         this.setState({isOpened: !this.state.isOpened})
     }
     handleClose(){
