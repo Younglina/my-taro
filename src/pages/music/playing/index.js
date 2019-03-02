@@ -46,6 +46,7 @@ export default class Index extends Component {
                 })
                 this.setState({ audioCtx: audioCtx })
             })
+            console.log(1)
             Taro.request({ url: 'http://134.175.224.127:7003/lyric?id=' + cp.id }).then(res => {
                 let ps = res.data.lrc.lyric
                 let psAry = ps.split('\n')
