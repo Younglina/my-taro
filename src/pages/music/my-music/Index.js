@@ -26,6 +26,7 @@ export default class Index extends Component {
     }
 
     componentDidMount() {
+        console.log(3)
         this.setState({ userData: getGlobalData('_userData') });
         Taro.request({
             // url: 'https://www.easy-mock.com/mock/5bda694acd0e9e45c2074584/user/playlist',
