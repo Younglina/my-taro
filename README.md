@@ -1,9 +1,9 @@
 ### 前言
-前段时间用mpvue开发过一个仿网易云音乐的微信小程序([链接](https://github.com/lucaswww/my-project))，但似乎mpvue好像是不再维护了，偶然得知有个[Taro](https://nervjs.github.io/taro/docs/README.html)也可以开发小程序，但是用的是[React](https://react.docschina.org/docs/hello-world.html)，正好也想了解了解React,所以体验了一下Taro。[git地址](https://github.com/lucaswww/my-taro)  
+前段时间用mpvue开发过一个仿网易云音乐的微信小程序([链接](https://github.com/lucaswww/my-project))，偶然得知有个[Taro](https://nervjs.github.io/taro/docs/README.html)也可以开发小程序，但是用的是[React](https://react.docschina.org/docs/hello-world.html)，正好也想了解了解React,所以体验了一下Taro。[git地址](https://github.com/lucaswww/my-taro)  
 
 ### 预览
 · 18/12/28 歌单详情页面  
-![](https://izaya-1256042946.cos.ap-chengdu.myqcloud.com/9566690551f6ad0338443546913e106.jpg)  
+![](https://user-gold-cdn.xitu.io/2019/2/25/169223ef7d673113?w=240&h=420&f=jpeg&s=33470)  
 · 18/12/30 播放页面1.0(还没加入歌词)  
 ![](https://user-gold-cdn.xitu.io/2018/12/30/167fdd71537dc46f?w=375&h=667&f=png&s=264403)  
 · 19/01/02 播放页面2.0  
@@ -14,7 +14,14 @@
 ![](https://user-gold-cdn.xitu.io/2019/1/3/1681316eb2970f81?w=381&h=655&f=png&s=153742)  
 · 19/01/04 热门歌单、精品歌单  
 ![](https://user-gold-cdn.xitu.io/2019/1/4/168180fc9230762e?w=325&h=580&f=png&s=283632)  
-![](https://user-gold-cdn.xitu.io/2019/1/4/168180ef8805435c?w=324&h=580&f=png&s=185205)  
+![](https://user-gold-cdn.xitu.io/2019/1/4/168180ef8805435c?w=324&h=580&f=png&s=185205) 
+我的页面
+![](https://user-gold-cdn.xitu.io/2019/2/25/169239e6f21a26f5?w=369&h=638&f=png&s=149389)
+搜索
+![](https://user-gold-cdn.xitu.io/2019/2/25/169239c1b1030c8e?w=370&h=642&f=png&s=32667)
+![](https://user-gold-cdn.xitu.io/2019/2/25/169239c2d91bc2df?w=371&h=638&f=png&s=34249)
+个人歌单
+![](https://user-gold-cdn.xitu.io/2019/2/25/169239c3c50d549b?w=371&h=638&f=png&s=66269)
 ### Taro简介
 Taro 是一套遵循 React 语法规范的 多端开发 解决方案。使用 Taro，我们可以只书写一套代码，再通过 Taro 的编译工具，将源代码分别编译出可以在不同端（微信小程序、H5、RN 等）运行的代码，组件可以使用Taro的Taro-ui。(摘至[官网](https://nervjs.github.io/taro/docs/README.html))
 
